@@ -11,13 +11,17 @@ int main(void)
 {
 	char j;
 
-	for (j = 'k' ; j <= 'l' ; j++)
+
+
+	for (j = 'a' ; j <= 'z' ; j++)
 	{
 		putchar(j);
 
 	}
 
-	for (j = 'K' ; j <= 'L' ; j++)
+
+
+	for (j = 'A' ; j <= 'Z' ; j++)
 	{
 		putchar(j);
 	}
