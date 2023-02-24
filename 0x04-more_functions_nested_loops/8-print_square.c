@@ -4,33 +4,25 @@
  * @size: size of both width and length
  * Return: a square made of '#'
  */
- 
- 
-void print_diagonal(int n)
-{
-	int i, j;
 
-	if (n < 1)
+void print_square(int size)
+{
+	int co, ro;
+
+	if (size <= 0)
 	{
 		_putchar('\n');
 	}
 	else
 	{
-		for (i = 1; i <= n; i++)
+		for (co = 1; co <= size; co++)
 		{
-			if ((n > 1) && (i > 1))
+			_putchar('#');
+			for (ro = 2; ro <= size; ro++)
 			{
-				for (j = 1; j <= i - 1; j++)
-				{
-					_putchar(32);
-				}
+				_putchar('#');
 			}
-			_putchar('\\');
-			if (i != n)
-			{
-				_putchar('\n');
-			}
+			_putchar('\n');
 		}
-		_putchar('\n');
 	}
 }
