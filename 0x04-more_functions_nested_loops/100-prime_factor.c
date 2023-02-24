@@ -1,11 +1,37 @@
-
-#include <stdio.h>
+#include "main.h"
 /**
- * main - prints prime factors of 612852475143
+ * print_number - prints a number with _putchar
+ * @n: Number to print
  *
- * Return: Always 0 (Success)
+ * Return: 0
  */
-int main(void)
+void print_number(int n)
 {
-	return (0);
+	int ten, i, neg;
+	unsigned int digit, digit2;
+
+	ten = 1;
+	if (n < 0)
+	{
+		n = n * -1;
+		neg = 1;
+	}
+	digit = n;
+	digit2 = n;
+	while (digit >= 10)
+	{
+		digit = digit / 10;
+		ten = ten * 10;
+	}
+	if (neg == 1)
+	{
+		_putchar('-');
+	}
+	_putchar('0' + (digit2 / ten));
+	i = ten / 10;
+	while (i >= 1)
+	{
+		_putchar('0' + (digit2 / i) % 10);
+		i = i / 10;
+	}
 }
