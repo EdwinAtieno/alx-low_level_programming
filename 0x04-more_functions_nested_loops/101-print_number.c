@@ -1,40 +1,26 @@
-
 #include "main.h"
 
 /**
- * print_number - prints a number with _putchar
- * @n: Number to print
- *
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
+ * print_number - prints an integer
+ * @n: integer to be printed
  */
 void print_number(int n)
 {
-	int ten, i, neg;
-	unsigned int digit, digit2;
+	unsigned int n1;
 
-	ten = 1;
 	if (n < 0)
 	{
-		n = n * -1;
-		neg = 1;
-	}
-	digit = n;
-	digit2 = n;
-	while (digit >= 10)
-	{
-		digit = digit / 10;
-		ten = ten * 10;
-	}
-	if (neg == 1)
-	{
+		n1 = -n;
 		_putchar('-');
-	}
-	_putchar('0' + (digit2 / ten));
-	i = ten / 10;
-	while (i >= 1)
+	} else
 	{
-		_putchar('0' + (digit2 / i) % 10);
-		i = i / 10;
+		n1 = n;
 	}
+
+	if (n1 / 10)
+	{
+		print_number(n1 / 10);
+	}
+
+	_putchar((n1 % 10) + '0');
 }
