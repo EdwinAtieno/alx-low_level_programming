@@ -6,21 +6,29 @@
  */
 void print_number(int n)
 {
-	unsigned int n1;
+	int digits = 1;
+	int divisor = 1;
+	int i;
+	int is_negative = 0;
 
 	if (n < 0)
 	{
-		n1 = -n;
+		is_negative = 1;
+		n *= -1;
+	}
+	while ((n / divisor) >= 10)
+	{
+		digits++;
+		divisor *= 10;
+	}
+	if (is_negative)
+	{
 		_putchar('-');
-	} else
-	{
-		n1 = n;
 	}
-
-	if (n1 / 10)
+	for (i = 0; i < digits; i++)
 	{
-		print_number(n1 / 10);
+		_putchar(((n / divisor) % 10) + '0');
+		divisor /= 10;
 	}
-
-	_putchar((n1 % 10) + '0');
+	_putchar((n % 10) + '0');
 }
